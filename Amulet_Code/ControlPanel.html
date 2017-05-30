@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--last modified on Monday, December 11, 2000 08:01 AM -->
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+<META NAME="Amulet" Content="baud=9600">
+
+	<TITLE>Final Project Control Panel</TITLE>
+</HEAD>
+
+<BODY>
+
+<P>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="320" HEIGHT="240">
+	<TR>
+		<TD WIDTH="320" HEIGHT="240" valign="top">
+			<table border="0" cellpadding="0" cellspacing="0" width="320" height="60">
+				<tr>
+					<td width="160" height="60" align="center" valign="center">
+						<APPLET CODE="FunctionButton.class" WIDTH="90" HEIGHT="40" NAME="AdjustCurrentBrightness">
+							<PARAM NAME="label" VALUE="Adjust Current Brightness">
+							<PARAM NAME="href" value="Amulet:UART.byteOut(0x31)">
+							<PARAM NAME="fontSize" VALUE="1"> 
+							<PARAM NAME="buttonType" VALUE="SPRING-LOADED">
+							<PARAM NAME="onButtonPress" VALUE="DEPRESS">
+						</APPLET></td>
+						
+					<td width="160" height="60" align="center" valign="center">
+						<APPLET CODE="FunctionButton.class" WIDTH="90" HEIGHT="40" NAME="LockCurrentBrightness">
+							<PARAM NAME="label" VALUE="Lock Current Brightness">
+							<PARAM NAME="href" value="Amulet:UART.byteOut(0x32)">
+							<PARAM NAME="fontSize" VALUE="1"> 
+							<PARAM NAME="buttonType" VALUE="SPRING-LOADED">
+							<PARAM NAME="onButtonPress" VALUE="depress">
+						</APPLET></td>
+				</tr>
+				
+			</table>
+			
+			<table border="0" cellpadding="0" cellspacing="0" width="320" height="50">
+				<tr>
+					<td height="20" width="160" align="center">
+						<font size="2"> Current Brightness </font>
+					</td>
+					
+					<td height="20" width="160" align="left">
+						<APPLET CODE="Slider.class" WIDTH="133" HEIGHT="20" NAME="CurrentBrightness" >
+							<PARAM NAME="href" VALUE="Amulet:UART.byteOut(this.value())">
+							<PARAM NAME="min" VALUE="0xF5">
+							<PARAM NAME="max" VALUE="0xFF">
+							<PARAM NAME="tickCount" VALUE="10">
+							<PARAM NAME="handleThickness" VALUE="10">
+							<PARAM NAME="tickPosition" VALUE="center">
+							<PARAM NAME="tickLength" VALUE="7">
+							<PARAM NAME="initialCondition" VALUE="0xFA">
+						</APPLET>
+					</td>
+				</tr>
+				<tr>	
+					<td height="30"></td>
+				</tr>
+			</table> 
+			
+			<table border="0" cellpadding="0" cellspacing="0" width="320" height="60">
+				<tr>
+					<td width="160" height="60" align="center" valign="center">
+						<APPLET CODE="FunctionButton.class" WIDTH="80" HEIGHT="40" NAME="Adjust Timed Brightness">
+							<PARAM NAME="label" VALUE="Adjust Timed Brightness">
+							<PARAM NAME="href" value="Amulet:UART.byteOut(0x41), Amulet:document.AfternoonBrightness.reappear(), 
+							Amulet:document.EveningBrightness.reappear(), Amulet:document.MorningBrightness.reappear()">
+							<PARAM NAME="fontSize" VALUE="1"> 
+							<PARAM NAME="buttonType" VALUE="SPRING-LOADED">
+							<PARAM NAME="onButtonPress" VALUE="DEPRESS">
+						</APPLET></td>
+						
+					<td width="160" height="60" align="center" valign="center">
+						<APPLET CODE="FunctionButton.class" WIDTH="80" HEIGHT="40" NAME="Start Timed Simulation">
+							<PARAM NAME="label" VALUE="Start Timed Simulation">
+							<PARAM NAME="href" value="Amulet:UART.byteOut(0x42)">
+							<PARAM NAME="fontSize" VALUE="1"> 
+							<PARAM NAME="buttonType" VALUE="SPRING-LOADED">
+							<PARAM NAME="onButtonPress" VALUE="depress">
+						</APPLET></td>
+				</tr>
+				
+			</table>
+			
+			<table border="0" cellpadding="0" cellspacing="0" width="320" height="20">
+				<tr>
+
+					<td height="20" width="160" align="center">
+						<font size="2"> Morning Brightness </font>
+						<!-- <APPLET CODE="StringField.class" WIDTH="160" HEIGHT="20" NAME = "MorningBrightnessText">
+							<PARAM NAME="href" VALUE="Amulet:UART.byteOut(3).value()"> 
+							<PARAM NAME="fontSize" VALUE="2">
+							<PARAM NAME="printf" VALUE="Morning Brightness">
+						</APPLET> -->
+					</td>
+					
+					<td height="20" width="160" align="left">
+						<APPLET CODE="Slider.class" WIDTH="133" HEIGHT="20" NAME="MorningBrightness" >
+							<PARAM NAME="href" VALUE="Amulet:UART.byteOut(this.value())">
+							<PARAM NAME="min" VALUE="0xE5">
+							<PARAM NAME="max" VALUE="0xEF">
+							<PARAM NAME="tickCount" VALUE="10">
+							<PARAM NAME="handleThickness" VALUE="10">
+							<PARAM NAME="tickPosition" VALUE="center">
+							<PARAM NAME="tickLength" VALUE="7">
+							<PARAM NAME="initialCondition" VALUE="0xEA">
+							<PARAM NAME="invisible" VALUE="false">
+						</APPLET>
+					</td>
+				</tr>
+			</table> 
+			
+			<table border="0" cellpadding="0" cellspacing="0" width="320" height="20">
+				<tr>
+					<td height="20" width="160" align="center">
+						<font size="2"> Afternoon Brightness </font>
+					</td>
+					
+					<td height="20" width="160" align="left">
+						<APPLET CODE="Slider.class" WIDTH="133" HEIGHT="20" NAME="AfternoonBrightness" >
+							<PARAM NAME="href" VALUE="Amulet:UART.byteOut(this.value())">
+							<PARAM NAME="min" VALUE="0xD5">
+							<PARAM NAME="max" VALUE="0xDF">
+							<PARAM NAME="tickCount" VALUE="10">
+							<PARAM NAME="handleThickness" VALUE="10">
+							<PARAM NAME="tickPosition" VALUE="center">
+							<PARAM NAME="tickLength" VALUE="7">
+							<PARAM NAME="initialCondition" VALUE="0xDA">
+							<PARAM NAME="invisible" VALUE="false">
+						</APPLET>
+					</td>
+				</tr>
+			</table> 
+			
+			<table border="0" cellpadding="0" cellspacing="0" width="320" height="20">
+				<tr>
+					<td height="20" width="160" align="center">
+						<font size="2"> Evening Brightness </font>
+					</td>
+					
+					<td height="20" width="160" align="left">
+						<APPLET CODE="Slider.class" WIDTH="133" HEIGHT="20" NAME="EveningBrightness" >
+							<PARAM NAME="href" VALUE="Amulet:UART.byteOut(this.value())">
+							<PARAM NAME="min" VALUE="0xC5">
+							<PARAM NAME="max" VALUE="0xCF">
+							<PARAM NAME="tickCount" VALUE="10">
+							<PARAM NAME="handleThickness" VALUE="10">
+							<PARAM NAME="tickPosition" VALUE="center">
+							<PARAM NAME="tickLength" VALUE="7">
+							<PARAM NAME="initialCondition" VALUE="0xCA">
+							<PARAM NAME="invisible" VALUE="false">
+						</APPLET>
+					</td>
+				</tr>
+			</table> 
+		</TD>
+	</TR>
+</TABLE>
+
+
+</BODY>
+
+</HTML>

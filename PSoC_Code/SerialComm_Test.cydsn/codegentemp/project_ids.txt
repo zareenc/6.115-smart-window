@@ -1,0 +1,5 @@
+C:\Users\student\Desktop\6.115_ZC_FP\ZC_FP\SerialComm_Test.cydsn\SerialComm_Test.cyprj|8ea3adc3-41d7-4752-b67d-4f99ac76492a
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|7038aae9-1941-4ed3-bd31-44c4f94a63e1
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|4476b1f6-3dd1-4bb4-803c-363c6f9500ab
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f7160a9a-519d-4aa7-addb-2cf8a6cd9bd9
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|8c0f92cc-656e-4460-baab-f9bf1d97c34d

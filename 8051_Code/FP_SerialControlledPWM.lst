@@ -1,0 +1,94 @@
+                                    ; This program generates a PWM signal to dr
+                   ; a servo motor. The PWM duty cycle is controlled by 
+                   ; a potentiometer on the PSOC, whose value is 
+                   ; transmitted over serial communication. 
+                   
+0000:              .org 00h       
+0000: 02 01 00         ljmp start 
+                             
+                   ; Timer 0 interrupt handler 
+000B:              .org 000bh
+                   T0ISR:
+000B: 12 01 25              lcall pwm   
+000E: 32                    reti 
+                            
+                   ; Main program   
+0100:              .org 100h     
+                   start:   
+                            ; initialize serial communication 
+0100: 75 89 21              mov tmod, #21h          ; set timer 1 to auto reloa
+                                                                            ; a
+0103: 75 88 40         mov tcon, #40h               ; run timer 1
+0106: 75 8D FD         mov th1, #0fdh               ; set 9600 baud with xtal=1
+0109: 75 98 50         mov scon, #50h               ; set serial control reg fo
+                   
+                            ; set 8255 control word 
+010C: 90 FE 13              mov dptr, #0fe13h               ; control word addr
+010F: 74 83                 mov a, #83h                     ; use group A as ou
+0111: F0                    movx @dptr, a 
+                            
+                            ; initialize values
+0112: 78 F5                 mov R0, #245d
+0114: 79 C1                 mov R1, #193d 
+0116: 7B 00                 mov R3, #00h 
+                   
+                            ; initialize timer and interrupt 
+                            ; mov tmod, #01h                        
+0118: D2 8C                 setb tr0                                ; use timer
+011A: 75 A8 82              mov ie, #82h                    ; enable timer 0 ov
+011D: E8                    mov a, R0 
+011E: F5 8C                 mov th0, a 
+0120: 75 8A FF              mov tl0, #255d 
+                            
+                            loop:
+0123: 80 FE                         sjmp loop 
+                                    
+                                    
+                   ; PWM subroutine
+                   pwm:
+                            ; cpl P1.0 
+0125: BB 01 0C              cjne R3, #01h, lo
+                            hi:
+0128: E8                            mov a, R0
+0129: F5 8C                         mov th0, a 
+012B: 75 8A FF                      mov tl0, #255d          
+012E: 74 10                         mov a, #10h             ; send hi to PA.4
+0130: 7B 00                         mov R3, #00h 
+0132: 80 0A                         sjmp done_duty
+                            lo:
+0134: E9                            mov a, R1
+0135: F5 8C                         mov th0, a 
+0137: 75 8A FF                      mov tl0, #255d 
+013A: 74 00                         mov a, #00h             ; send low to PA.4 
+013C: 7B 01                         mov R3, #01h 
+                            done_duty:
+013E: 90 FE 10                      mov dptr, #0fe10h
+0141: F0                            movx @dptr, a           ; send command to P
+0142: 30 98 0B                      jnb ri, done_pwm
+                            get_serial:
+                                    ; cpl P1.0 
+0145: E5 99                         mov a, sbuf                     ; get chara
+                                    ; mov P1, a 
+0147: F8                            mov R0, a                       ; sets new 
+0148: 12 01 51                      lcall get_low 
+014B: F9                            mov R1, a                       ; sets new 
+014C: F5 90                         mov P1, a 
+014E: C2 98                         clr ri
+                            done_pwm:
+0150: 22                            ret 
+                                    
+                   ; Get low subroutine
+                   ; Calculates TH0 low, returns in accumulator
+                   get_low:
+0151: 74 FF                 mov a, #255d            ; 255-TH0 high 
+0153: C3                    clr c 
+0154: 98                    subb a, R0 
+0155: FA                    mov R2, a  
+0156: 74 48                 mov a, #72d             ; 72-answer 
+0158: C3                    clr c 
+0159: 9A                    subb a, R2 
+015A: FA                    mov R2, a 
+015B: 74 FF                 mov a, #255d            ; 255-answer 
+015D: C3                    clr c 
+015E: 9A                    subb a, R2 
+015F: 22                    ret 

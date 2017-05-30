@@ -1,0 +1,8 @@
+/*      File Name                Flash Index                  */
+/*      ---------                -----------                  */
+#define OSCheck.html               0x20  /* File Size = 0x9B  */
+#define ControlPanel.html          0x21  /* File Size = 0x270 */
+#define Amulet Sans Serif_1.amf    0x22  /* File Size = 0x44A */
+#define Amulet Sans Serif_2.amf    0x23  /* File Size = 0x5E9 */
+#define fontHdr.amf                0xF   /* File Size = 0x20  */
+#define internalRAM.bin            0x6   /* File Size = 0x10FA*/

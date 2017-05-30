@@ -1,0 +1,68 @@
+--------------- Rebuild Started: 05/03/2017 17:00:31 Project: SerialComm_Test, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\main.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\cymetadata.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\UART_1.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\UART_1_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\UART_1_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\UART_1_BOOT.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\LCD_Char_1.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\UART_1_IntClock.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_AMux.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_Ext_CP_Clk.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_IRQ.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_theACLK.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_LCDPort.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Cm3Start.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CyDmac.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CyFlash.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CyLib.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\cyPm.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CySpc.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\cyutils.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\tx_int.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\rx_int.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Pot.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\LED.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Photo_1.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Photo_2.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\AMux_1.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Photo_3.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Photo_4.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\SerialComm_Test.hex"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\SerialComm_Test.elf"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\SerialComm_Test.map"
+Deleting file ".\SerialComm_Test.cycdx"
+Deleting file ".\SerialComm_Test.svd"
+Deleting file ".\SerialComm_Test.rpt"
+Deleting file ".\SerialComm_Test_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\.deps\C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\.deps\ARM_C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\.deps\GNU_ARM_ASM_FILE.P"
+cydsfit.exe -.appdatapath "C:\Users\student\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\student\Desktop\6.115_ZC_FP\ZC_FP\SerialComm_Test.cydsn\SerialComm_Test.cyprj -d CY8C5868AXI-LP035 -s C:\Users\student\Desktop\6.115_ZC_FP\ZC_FP\SerialComm_Test.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0065: information: Analog terminal "AMux_1.AoutTerm" on TopDesign is unconnected.
+ * C:\Users\student\Desktop\6.115_ZC_FP\ZC_FP\SerialComm_Test.cydsn\TopDesign\TopDesign.cysch (Signal: Net_238)
+ * C:\Users\student\Desktop\6.115_ZC_FP\ZC_FP\SerialComm_Test.cydsn\TopDesign\TopDesign.cysch (Shape_38.6)
+ADD: sdb.M0065: information: Analog terminal "AMux_1.AinTerm1" on TopDesign is unconnected.
+ * C:\Users\student\Desktop\6.115_ZC_FP\ZC_FP\SerialComm_Test.cydsn\TopDesign\TopDesign.cysch (Signal: Net_225)
+ * C:\Users\student\Desktop\6.115_ZC_FP\ZC_FP\SerialComm_Test.cydsn\TopDesign\TopDesign.cysch (Shape_38.2)
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 1 pin(s) will be assigned a location by the fitter: Photo_1(0)
+Analog Placement ...
+Info: apr.M0002: Analog signal "Net_225" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_238" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "\ADC_DelSig_1:Net_35\" is connected to one terminal only. (App=cydsfit)
+Error: apr.M0024: The common connection of Analog Mux "AMux_1" is not connected to anything else. (App=cydsfit)
+Dependency Generation ...
+Clean Temporary Files ...
+Error: cdf.M0005: CyDsFit aborted due to errors, please address all errors and rerun CyDsFit. (App=cydsfit)
+--------------- Rebuild Failed: 05/03/2017 17:00:35 ---------------
